@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+string solution(int n) {
+    string answer;
+    string str1 = "일";
+    string str2 = "수박";
+    
+    int size = str2.length()/str1.length();
+    
+    for(int i=0;i<n;++i){
+        answer += str2.substr(str1.length()*(i%size),str1.length());
+    }
+    return answer;
+}
+
+int main(){
+    int n;
+    cin >> n;
+    cout << solution(n);
+    return 0;
+}
